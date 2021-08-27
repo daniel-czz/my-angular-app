@@ -25,7 +25,9 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes() : void {
-    this.heroes = this.heroService.getHeroes();
+    // this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes); //getHeroes（）的返还指会被存到 heroes 里面
   }
 
 }
